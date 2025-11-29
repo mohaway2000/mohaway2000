@@ -37,8 +37,10 @@
 ### خدماتي (متاح للعمل فورًا)
 <div align="center">
 
-[![خمسات](https://img.shields.io/badge/خمسات-00C853?style=for-the-badge&logo=fiverr&logoColor=white)](https://khamsat.com/user/mohamed_badawy)
-[![مستقل](https://img.shields.io/badge/مستقل-6C63FF?style=for-the-badge&logo=freelancer&logoColor=white)](https://mostaql.com/u/mohamed_badawy)
+[![خمسات](https://img.shields.io/badge/خمسات-00C853?style=for-the-badge&logo=fiverr&logoColor=white)](https://khamsat.com/user/mohaway20000
+)
+[![مستقل](https://img.shields.io/badge/مستقل-6C63FF?style=for-the-badge&logo=freelancer&logoColor=white)](https://mostaql.com/u/mohaway2000
+)
 [![Upwork](https://img.shields.io/badge/Upwork-108A00?style=for-the-badge&logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/~01badawy)
 
 </div>
@@ -47,14 +49,13 @@
 <div align="center">
 
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/mohaway2000)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/201234567890)
-[![Email](https://img.shields.io/badge/Email-FFD700?style=for-the-badge&logo=gmail&logoColor=black)](mailto:mohamedbadawy.dev@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/201063964010)
+[![Email](https://img.shields.io/badge/Email-FFD700?style=for-the-badge&logo=gmail&logoColor=black)](mailto:mohaway2000@gmail.com)
 
 </div>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,6,15,21&height=150&section=footer"/>
 </p>
-
-> **"أنا مش بكتب كود… أنا بصنع آلات فلوس"**  
-> — 𝑀𝑜𝒽𝒶𝓂𝑒𝒹 𝓑𝓪𝓭𝓪𝔀𝔂 © 2025
+> 💡 **"أنا مش بكتب كود… أنا بصنع آلات فلوس"**  
+> — Mohamed Badawy © 2025
