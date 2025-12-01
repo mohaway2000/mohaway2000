@@ -1,0 +1,29 @@
+name: Crypto Ninja Daily Alpha
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # كل يوم الساعة 9 صباحًا بتوقيت مصر
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  alpha:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: إعداد Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: تثبيت المكتبات
+        run: npm install
+
+      - name: تشغيل البوت
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node alpha-hunter.js
