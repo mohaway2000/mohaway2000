@@ -1,5 +1,5 @@
-import axios from 'axios';
-import TelegramBot from 'node-telegram-bot-api';
+const axios = require('axios');
+const TelegramBot = require('node-telegram-bot-api');
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -14,7 +14,7 @@ const bot = new TelegramBot(token);
 let message = `ألفا يومية من CryptoNinjaEG 🥷\n`;
 message += `التاريخ: ${new Date().toLocaleDateString('ar-EG')}\n\n`;
 
-async function main() {
+(async () => {
   try {
     const airdropRes = await axios.get('https://api.airdropalert.com/v1/airdrop?status=active', { timeout: 8000 }).catch(() => ({ data: { airdrops: [] } }));
     const airdrops = airdropRes.data.airdrops || [];
@@ -44,6 +44,4 @@ async function main() {
     await bot.sendMessage(chatId, "حصل مشكلة مؤقتة، الإيردروب راجع بعد ساعة 🥷");
     console.error(err.message);
   }
-}
-
-main();
+})();
