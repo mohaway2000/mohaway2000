@@ -1,7 +1,6 @@
 {
   "name": "cryptoninjaeg",
   "version": "1.0.0",
-  "type": "module",
   "main": "alpha-hunter.js",
   "dependencies": {
     "axios": "latest",
