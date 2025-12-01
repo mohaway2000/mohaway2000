@@ -1,0 +1,9 @@
+{
+  "name": "cryptoninjaeg",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "axios": "latest",
+    "node-telegram-bot-api": "latest"
+  }
+}
