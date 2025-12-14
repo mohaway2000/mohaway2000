@@ -14,7 +14,6 @@
 </p>
 
 ### أنا بعمل بوتات تجيب فلوس لوحدها
-- Microsoft Rewards Full Auto (500+ نقطة يوميًا)  
 - YouTube Auto Uploader (فيديوهات + شورتس + جدولة)  
 - Amazon/Noon Price Alerts (إشعار فوري لما السعر ينزل)  
 - Telegram & WhatsApp Money Bots (دخل يومي بدون مجهود)
