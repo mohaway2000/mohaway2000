@@ -2,7 +2,7 @@
 
 <!-- صورة شخصية فاخرة -->
 <div align="center">
-  <img src="https://i.imgur.com/9vG3k8L.png" width="200" style="border-radius:50%; border:5px solid #ffd700; box-shadow: 0 0 30px #ffd70050;"/>
+  <img src="https://github.com/mohaway2000/CryptoNinjaEG/raw/main/crypto-ninja.png" width="260" style="border-radius:50%; border:14px solid #00ff41; box-shadow: 0 0 70px #00ff4180;"/>
 </div>
 
 <h1 align="center">𝑀𝑜𝒽𝒶𝓂𝑒𝒹 𝓑𝓪𝓭𝓪𝔀𝔂 👋</h1>
