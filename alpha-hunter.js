@@ -1,47 +1,28 @@
 const axios = require('axios');
 const TelegramBot = require('node-telegram-bot-api');
 
-// ENV
+// ENV Variables - هتحطهم في Settings بتاعة الـ deploy
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
-
 const bot = new TelegramBot(token, { polling: false });
 
 // رسالة البداية
-let message =
-  `ألفا يومية من CryptoNinjaEG 🥷\n` +
-  `التاريخ: ${new Date().toLocaleDateString('ar-EG')}\n\n`;
+let message = `🥷🔥💀 ألفا يومية سرية من CryptoNinjaEG 🥷🔥💀\n` +
+              `📅 التاريخ: ${new Date().toLocaleDateString('ar-EG')}\n` +
+              `🤑💎🪂 خليك نينجا وصيد الفرص قبل الجميع! 🪂💎🤑\n\n`;
 
 (async () => {
   try {
-    /* ================================
-        1) إحضار الإيردروبات
-    ================================= */
-    let airdrops = [];
-    try {
-      const airdrop = await axios.get(
-        'https://api.airdropalert.com/v1/airdrop?status=active',
-        { timeout: 10000 }
-      );
-      airdrops = airdrop.data.airdrops || [];
-    } catch (err) {
-      message += "⚠️ تعذر جلب بيانات الإيردروبات الآن.\n\n";
-    }
+    // ===== أقوى فرص فارمينج وإيردروبات نشطة (ديسمبر 2025) =====
+    message += `🪂🔥💰 أقوى 6 فرص إيردروب وفارمينج نشطة الآن 🔥🪂💰\n\n`;
+    message += `1. 💱 Hyperliquid Season 2 📈\n🎁 تداول perps → مكافآت تصل $100k+\n🔗 hyperliquid.xyz\n\n`;
+    message += `2. 👛 MetaMask Rewards 🤑\n🎁 نقاط من swaps + bridging + perps + mUSD\n🔗 metamask.io\n\n`;
+    message += `3. 🌉 Base Ecosystem 🚀\n🎁 فارم عبر Aerodrome, Uniswap, Aave\n🔗 base.org\n\n`;
+    message += `4. 🔗 LayerZero V2 🪂\n🎁 نقاط من cross-chain transactions\n🔗 layerzero.network\n\n`;
+    message += `5. 🖼️ OpenSea Rewards 🎨\n🎁 نقاط من NFT trading + listing\n🔗 opensea.io\n\n`;
+    message += `6. 💱 Aster Perps DEX 📈\n🎁 تداول perps → نقاط عالية (CZ backed)\n🔗 aster.exchange\n\n`;
 
-    if (airdrops.length > 0) {
-      message += "🔥 أفضل إيردروبات اليوم:\n";
-      airdrops.slice(0, 6).forEach((a, i) => {
-        message += `${i + 1}. ${a.title || "مشروع جديد"}\n` +
-                   `🎁 المكافأة: ${a.reward || "غير محدد"}\n` +
-                   `🔗 الرابط: ${a.link || "غير متوفر"}\n\n`;
-      });
-    } else {
-      message += "⏳ لا يوجد إيردروبات نشطة حاليًا\n\n";
-    }
-
-    /* ================================
-        2) العملات الأكثر صعودًا
-    ================================= */
+    // ===== أقوى 5 عملات صاعدة (CoinGecko - أوتوماتيكي) =====
     let gainers = [];
     try {
       const cg = await axios.get(
@@ -49,36 +30,41 @@ let message =
         {
           params: {
             vs_currency: "usd",
-            order: "price_change_24h_desc",
+            order: "price_change_percentage_24h_desc",
             per_page: 5,
-            page: 1
+            page: 1,
+            sparkline: false
           },
           timeout: 12000
         }
       );
       gainers = cg.data || [];
     } catch (err) {
-      message += "⚠️ تعذر جلب بيانات العملات من CoinGecko.\n\n";
+      message += `⚠️🔌 تعذر جلب بيانات CoinGecko مؤقتًا... الإشارة هترجع أقوى! ⚠️🔌\n\n`;
     }
 
     if (gainers.length > 0) {
-      message += "🚀 أقوى 5 عملات صاعدة اليوم:\n";
+      message += `🚀📈💥 أقوى 5 عملات صاعدة اليوم (24h) 💥📈🚀\n\n`;
       gainers.forEach((c, i) => {
-        message += `${i + 1}. ${c.name} (${c.symbol.toUpperCase()})\n` +
-                   `📈 +${c.price_change_percentage_24h.toFixed(2)}%\n` +
-                   `💲 السعر: $${c.current_price}\n\n`;
+        const change = c.price_change_percentage_24h?.toFixed(2) || "0.00";
+        const price = c.current_price?.toLocaleString(undefined, { minimumFractionDigits: 2 }) || "غير متوفر";
+        message += `${i + 1}. ₿ ${c.name} (${c.symbol.toUpperCase()}) 🔥\n` +
+                   `📊 الصعود: +${change}% 🟢🤑\n` +
+                   `💲 السعر: $${price} 💎\n\n`;
       });
+    } else {
+      message += `⏳🔕 السوق هادئ اليوم... انتظر الانفجار القادم يا نينجا! ⏳🔥\n\n`;
     }
 
-    // ختم
-    message += "تابعنا: @Mohaway2000\n#CryptoNinjaEG";
+    // ===== الختم =====
+    message += `🥷💀🤑 تابعنا يوميًا للألفا الحصري والصفقات السرية!\n`;
+    message += `@Mohaway2000 🚀 #CryptoNinjaEG 🥷🤑💰🪂`;
 
-    // إرسال الرسالة
+    // ===== إرسال الرسالة =====
     await bot.sendMessage(chatId, message, { disable_web_page_preview: true });
-    console.log("تم الإرسال بنجاح! ✅");
-
+    console.log("تم الإرسال بنجاح يا أسطورة! ✅🚀💀");
   } catch (err) {
-    await bot.sendMessage(chatId, "حصل مشكلة مؤقتة، راجع بعد ساعة 🥷");
-    console.error("خطأ:", err.message);
+    await bot.sendMessage(chatId, "🥷⚡⚠️ عطل سريع... الرسالة هترجع أقوى من الأول! ⚡🥷");
+    console.error("خطأ:", err);
   }
 })();
